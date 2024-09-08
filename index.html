@@ -74,13 +74,14 @@
   }
 
   .method {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the video horizontally */
     background-color: #222;
     padding: 20px;
     border-radius: 20px;
     width: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -89,6 +90,26 @@
     border: 3px solid transparent;
     user-select: none;
   }
+  
+  .video-logo {
+    margin: 0 auto; /* Center the video horizontally */
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .method {
+      width: 100%;
+      max-width: 300px; /* Adjust max-width for mobile */
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+  
+    .video-logo {
+      width: 180px; /* Adjusted width for mobile */
+      height: 60px; /* Adjusted height for mobile */
+      margin: 0 auto; /* Center on mobile as well */
+    }
+  }  
 
   .method:hover {
     transform: translateY(-10px);
