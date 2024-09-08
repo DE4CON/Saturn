@@ -9,268 +9,246 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #3e3e3e);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    padding-top: 160px; /* Adjusted padding to push content lower for PC */
+    transition: background 0.5s ease;
+  }
+
+  .container {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #E83636;
+    letter-spacing: 2px;
+    animation: popUp 0.7s ease-in-out;
+    cursor: pointer;
+  }
+
+  h1:hover {
+    color: #FFDC00;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #FFDC00;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  p {
+    margin: 30px 0;
+    font-size: 1.2rem;
+    color: #eaeaea;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .pay-methods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .method {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid transparent;
+    user-select: none;
+  }
+
+  .method:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+
+  .method.robux:hover {
+    border-color: #FFD700;
+    box-shadow: 0 0 15px #FFD700;
+  }
+
+  .method.cashapp:hover {
+    border-color: #00C853;
+    box-shadow: 0 0 15px #00C853;
+  }
+
+  .method.paypal:hover {
+    border-color: #007BFF;
+    box-shadow: 0 0 15px #007BFF;
+  }
+
+  .method .method-title {
+    font-size: 18px;
+    color: white;
+  }
+
+  .method .price {
+    font-size: 16px;
+    color: #ddd;
+  }
+
+  .video-logo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .method-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FFDC00;
+    z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .price {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    z-index: 1;
+  }
+
+  .video-logo {
+    width: 220px;
+    height: 70px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+  }
+
+  .video-logo:hover {
+    opacity: 0.8;
+  }
+
+  .links a {
+    color: #ffffff;
+    background-color: #7289da;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: auto;
+  }
+
+  .links a:hover {
+    background-color: #43b581;
+    color: #ffffff;
+    transform: scale(1.05);
+    border-color: #43b581;
+    box-shadow: 0 0 10px 2px rgba(67, 180, 129, 0.5);
+  }
+
+  .wider-method {
+    width: 250px;
+  }
+
+  @media (max-width: 768px) {
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e1e1e, #3e3e3e);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow-x: hidden;
-      padding-top: 100; /* Adjusted padding */
-      transition: background 0.5s ease;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e1e1e, #3e3e3e);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow-x: hidden;
-      padding-top: 120px; /* Adjusted padding to push content lower */
-      transition: background 0.5s ease;
+      padding-top: 60px; /* Reduced padding for mobile devices */
     }
 
     .container {
-      text-align: center;
-      width: 100%;
-      max-width: 1200px;
-      padding: 20px;
-      margin-top: 0; /* Adjusted margin-top if using this method instead */
-      animation: fadeIn 1s ease-in-out;
+      padding: 10px;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #E83636;
-      letter-spacing: 2px;
-      animation: popUp 0.7s ease-in-out;
-      cursor: pointer;
-    }
-
-    h1:hover {
-      color: #FFDC00;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      font-size: 2rem;
     }
 
     h2 {
-      font-size: 1.5rem;
-      color: #FFDC00;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease-in-out;
+      font-size: 1.2rem;
     }
 
     p {
-      margin: 30px 0;
-      font-size: 1.2rem;
-      color: #eaeaea;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 1rem;
     }
 
-    .pay-methods {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-/* General method styling */
-.method {
-  background-color: #222;
-  padding: 20px;
-  border-radius: 20px;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  border: 3px solid transparent;
-  user-select: none;
-}
-
-/* Glow effect on hover */
-.method:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
-}
-
-/* Robux Styling */
-.method.robux:hover {
-  border-color: #FFD700; /* Goldish Yellow */
-  box-shadow: 0 0 15px #FFD700; /* Goldish Yellow glow */
-}
-
-/* CashApp Styling */
-.method.cashapp:hover {
-  border-color: #00C853; /* Green for CashApp */
-  box-shadow: 0 0 15px #00C853; /* Green glow */
-}
-
-/* PayPal Styling */
-.method.paypal:hover {
-  border-color: #007BFF; /* Blue for PayPal */
-  box-shadow: 0 0 15px #007BFF; /* Blue glow */
-}
-
-/* Additional Styling for Method Elements */
-.method .method-title {
-  font-size: 18px;
-  color: white;
-}
-
-.method .price {
-  font-size: 16px;
-  color: #ddd;
-}
-
-.video-logo {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-    
-    .method .price {
-      font-size: 16px;
-      color: #ddd;
-    }
-    
-    .video-logo {
+    .method {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    
-    
-    .method-title {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #FFDC00;
-      z-index: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .price {
-      font-size: 1.2rem;
+      max-width: 300px; /* Adjust max-width for mobile */
       margin-bottom: 20px;
-      z-index: 1;
+      padding: 15px; /* Reduced padding for mobile */
     }
 
     .video-logo {
-      width: 220px;
-      height: 70px;
-      margin-bottom: 10px;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
-      border-radius: 10px;
+      width: 180px; /* Adjusted width for mobile */
+      height: 60px; /* Adjusted height for mobile */
     }
+  }
 
-    .video-logo:hover {
-      opacity: 0.8;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
-    .links a {
-      color: #ffffff; /* Text color */
-      background-color: #7289da; /* Discord blue background */
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      border: 2px solid transparent;
-      padding: 10px 20px;
-      border-radius: 25px;
-      display: inline-block;
-      margin: auto;
-    }
-    
-    .links a:hover {
-      background-color: #43b581; /* Discord green background on hover */
-      color: #ffffff; /* Ensure text remains white on hover */
-      transform: scale(1.05);
-      border-color: #43b581;
-      box-shadow: 0 0 10px 2px rgba(67, 180, 129, 0.5); /* Green shadow */
-    }
-    
+  @keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
 
-    .wider-method {
-      width: 250px;
-    }
+  @keyframes overlayPulse {
+    0% { background: rgba(0, 0, 0, 0.3); }
+    50% { background: rgba(0, 0, 0, 0.5); }
+    100% { background: rgba(0, 0, 0, 0.3); }
+  }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
+  .easter-egg {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #FFDC00;
+    color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: bounce 1s infinite;
+  }
 
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .method {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes popUp {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes overlayPulse {
-      0% { background: rgba(0, 0, 0, 0.3); }
-      50% { background: rgba(0, 0, 0, 0.5); }
-      100% { background: rgba(0, 0, 0, 0.3); }
-    }
-
-    /* Easter Egg Animation */
-    .easter-egg {
-      display: none;
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: #FFDC00;
-      color: #222;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      animation: bounce 1s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-30px); }
-      60% { transform: translateY(-15px); }
-    }
-  </style>
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+</style>
 </head>
 <body>
 
@@ -313,7 +291,7 @@
       <div class="method paypal" onclick="window.location.href='https://www.paypal.com/paypalme/rangeman10';">
         <video src="PP.mp4" class="video-logo" autoplay loop muted playsinline></video>
         <div class="method-title">PayPal Payments</div>
-        <div class="price">Lifetime: $11<br>1 Month: $6<br>1 Week: $4</div>
+        <div class="price">Lifetime: $11<br>1 Month: $8<br>1 Week: $4</div>
       </div>
     </div>    
     
