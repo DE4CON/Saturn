@@ -545,7 +545,7 @@ function processRobuxPayment(duration, link) {
     function processCashAppPayment(duration) {
       Swal.fire({
         title: 'CashApp Payment',
-        text: `Please send $${getDurationPrice('cashapp', duration)} to $rangeplug for ${duration} access. Include your Discord username in the note.`,
+        text: `Please send $${getDurationPrice('cashapp', duration)} to $orangeplugg for ${duration} access. Include your Discord username in the note.`,
         icon: 'info',
         confirmButtonText: 'I have sent the payment',
         showCancelButton: true,
@@ -574,8 +574,8 @@ function processRobuxPayment(duration, link) {
 
     function getDurationPrice(method, duration) {
       const prices = {
-        cashapp: { '1 week': 3, '1 month': 5, 'lifetime': 10 },
-        paypal: { '1 week': 4, '1 month': 8, 'lifetime': 11 }
+        cashapp: { '1 week': 2.50, '1 month': 7.50, 'lifetime': 12.50 },
+        paypal: { '1 week': 2.50, '1 month': 7.50, 'lifetime': 12.50 }
       };
       return prices[method][duration];
     }
