@@ -174,6 +174,10 @@
       .method:hover .video-logo {
         box-shadow: 0 0 20px currentColor;
       }
+      .method:hover .video-logo {
+        box-shadow: 0 0 20px currentColor;
+      }
+
     .links {
       margin-top: 50px;
     }
@@ -309,7 +313,7 @@
         transition: all 0.3s ease;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        border: 3px solid #8e44ad; /* Purple color */
+        border: 3px solid #8e44ad;
       }
       
       .free-option:hover {
@@ -368,7 +372,7 @@
           <div class="method-title">Robux Payments</div>
           <div class="price">
             1 Week: 500 Robux<br>
-            1 Month: 700 Robux<br>
+            1 Month: 1200 Robux<br>
             Lifetime: 1800 Robux
           </div>
         </div>
@@ -380,8 +384,8 @@
           <div class="method-title">CashApp Payments</div>
           <div class="price">
             1 Week: $2.50<br>
-            1 Month: $7.50<br>
-            Lifetime: $12.50
+            1 Month: $5.00<br>
+            Lifetime: $10.00
           </div>
         </div>
       </div>
@@ -392,21 +396,30 @@
           <div class="method-title">PayPal Payments</div>
           <div class="price">
             1 Week: $2.50<br>
-            1 Month: $7.50<br>
-            Lifetime: $12.50
+            1 Month: $5.00<br>
+            Lifetime: $10.00
           </div>
         </div>
       </div>
     </div>
 
     <div class="free-option" data-aos="fade-up" data-aos-delay="1200" onclick="showFreeOption()">
-    <div class="free-option-content">
-      <div class="free-option-title">Free Option</div>
-      <div class="free-option-description">Broke like me? Try Saturn Hub for free!</div>
+      <div class="free-option-content">
+        <div class="free-option-title">Free Option</div>
+        <div class="free-option-description">Broke like me? Try Saturn Hub for free!</div>
+      </div>
+      <button class="free-option-button">Get Free Key</button>
     </div>
-    <button class="free-option-button">Get Free Key</button>
-  </div>
-    
+
+    <!-- New Discord Boost Panel -->
+    <div class="free-option" data-aos="fade-up" data-aos-delay="1300" onclick="showBoostOptions()">
+      <div class="free-option-content">
+        <div class="free-option-title">Discord Boosts</div>
+        <div class="free-option-description">We accept Discord boosts!<br>1 Boost = 1 Week Whitelist<br>2 Boosts = 1 Month Whitelist</div>
+      </div>
+      <button class="free-option-button">Boost Us!</button>
+    </div>
+
     <div class="links" data-aos="fade-up" data-aos-delay="1200">
       <a href="https://discord.com/invite/sathub" target="_blank">
         <i class="fab fa-discord"></i> Join our Discord for support!
@@ -456,6 +469,22 @@
         });
       }
 
+    function showBoostOptions() {
+        Swal.fire({
+          title: 'Discord Boosts',
+          html: `
+            <p>Thank you for considering boosting us!</p>
+            <p>1 Boost = 1 Week Whitelist Access</p>
+            <p>2 Boosts = 1 Month Whitelist Access</p>
+            <p>If Purchased, Make A Ticket In Discord.</p>
+          `,
+          icon: 'info',
+          showConfirmButton: true,
+          confirmButtonText: 'Got it!',
+          showCloseButton: true,
+        });
+    }
+
     function showPaymentOptions(method) {
         let title, html;
       
@@ -478,8 +507,8 @@
               <p>Please include your Discord username in the payment note.</p>
               <div class="payment-buttons">
                 <button class="payment-button" onclick="processCashAppPayment('1 week')">1 Week - $2.50</button>
-                <button class="payment-button" onclick="processCashAppPayment('1 month')">1 Month - $7.50</button>
-                <button class="payment-button" onclick="processCashAppPayment('lifetime')">Lifetime - $12.50</button>
+                <button class="payment-button" onclick="processCashAppPayment('1 month')">1 Month - $5.00</button>
+                <button class="payment-button" onclick="processCashAppPayment('lifetime')">Lifetime - $10.00</button>
               </div>
             `;
             break;
@@ -490,8 +519,8 @@
               <p>Please include your Discord username in the payment note.</p>
               <div class="payment-buttons">
                 <button class="payment-button" onclick="processPayPalPayment('1 week')">1 Week - $2.50</button>
-                <button class="payment-button" onclick="processPayPalPayment('1 month')">1 Month - $7.50</button>
-                <button class="payment-button" onclick="processPayPalPayment('lifetime')">Lifetime - $12.50</button>
+                <button class="payment-button" onclick="processPayPalPayment('1 month')">1 Month - $5.00</button>
+                <button class="payment-button" onclick="processPayPalPayment('lifetime')">Lifetime - $10.00</button>
               </div>
             `;
             break;
@@ -509,38 +538,38 @@
         });
       }
 
-function processRobuxPayment(duration, link) {
-  Swal.fire({
-    title: 'Robux Payment',
-    html: `
-      <p>You will be redirected to purchase the ${duration} access. Please complete the transaction on Roblox.</p>
-      <p>After completing the purchase, take a screenshot of the confirmation.</p>
-    `,
-    icon: 'info',
-    showCancelButton: true,
-    confirmButtonText: 'Go to Roblox',
-    cancelButtonText: 'Cancel'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      window.open(link, '_blank');
+    function processRobuxPayment(duration, link) {
       Swal.fire({
-        title: 'Payment Completed?',
+        title: 'Robux Payment',
         html: `
-          <p>If you've completed the payment, please follow these steps:</p>
-          <ol style="text-align: left; margin-top: 10px;">
-            <li>Take a screenshot of your purchase confirmation</li>
-            <li>Go to our Discord server</li>
-            <li>Open a ticket in the appropriate channel</li>
-            <li>Send the screenshot and ping a staff member</li>
-          </ol>
+          <p>You will be redirected to purchase the ${duration} access. Please complete the transaction on Roblox.</p>
+          <p>After completing the purchase, take a screenshot of the confirmation.</p>
         `,
-        icon: 'question',
-        confirmButtonText: 'I understand',
-        showCancelButton: false,
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Go to Roblox',
+        cancelButtonText: 'Cancel'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open(link, '_blank');
+          Swal.fire({
+            title: 'Payment Completed?',
+            html: `
+              <p>If you've completed the payment, please follow these steps:</p>
+              <ol style="text-align: left; margin-top: 10px;">
+                <li>Take a screenshot of your purchase confirmation</li>
+                <li>Go to our Discord server</li>
+                <li>Open a ticket in the appropriate channel</li>
+                <li>Send the screenshot and ping a staff member</li>
+              </ol>
+            `,
+            icon: 'question',
+            confirmButtonText: 'I understand',
+            showCancelButton: false,
+          });
+        }
       });
     }
-  });
-}
 
     function processCashAppPayment(duration) {
       Swal.fire({
@@ -574,8 +603,8 @@ function processRobuxPayment(duration, link) {
 
     function getDurationPrice(method, duration) {
       const prices = {
-        cashapp: { '1 week': 2.50, '1 month': 7.50, 'lifetime': 12.50 },
-        paypal: { '1 week': 2.50, '1 month': 7.50, 'lifetime': 12.50 }
+        cashapp: { '1 week': 2.50, '1 month': 5.00, 'lifetime': 10.00 },
+        paypal: { '1 week': 2.50, '1 month': 5.00, 'lifetime': 10.00 }
       };
       return prices[method][duration];
     }
