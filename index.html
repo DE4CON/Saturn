@@ -178,38 +178,33 @@
         box-shadow: 0 0 20px currentColor;
       }
 
-    .links {
-      margin-top: 50px;
-    }
-
-    .links a {
-      color: #ffffff;
-      background-color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 12px 25px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .links a:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
-    }
-
-    .easter-egg {
-      display: none;
-      background-color: var(--secondary-color);
-      color: var(--background-dark);
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 30px;
-      font-weight: 600;
-      animation: bounce 1s;
-    }
-
+	  .links {
+		display: flex;            /* Set display to flex */
+		justify-content: center;  /* Center the button horizontally */
+		align-items: center;      /* Center the button vertically (optional) */
+		width: 100%;              /* Ensure the container takes up the full width */
+		margin-top: 50px;         /* Space from the top (adjust as needed) */
+	  }
+	  
+	  .links a {
+		color: #ffffff;
+		background-color: var(--primary-color);
+		text-decoration: none;
+		font-weight: 600;
+		padding: 12px 25px;
+		border-radius: 30px;
+		transition: all 0.3s ease;
+		display: inline-block;
+		font-size: 18px;          /* Adjust font size */
+		text-align: center;       /* Ensures text is centered in the button */
+	  }
+	  
+	  .links a:hover {
+		background-color: var(--secondary-color);
+		transform: translateY(-3px);
+		box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
+	  }
+	  
     @keyframes pulse {
       0% {
         text-shadow: 0 0 10px rgba(74, 144, 226, 0.7);
@@ -357,78 +352,138 @@
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
 
-  <div class="container">
-    <h1 id="title" data-aos="zoom-in">🪐 Saturn Hub Premium 🪐</h1>
-    <h2 data-aos="fade-up" data-aos-delay="200">Elevate Your Experience!</h2>
+<div class="container">
+  <h1 id="title" data-aos="zoom-in">🪐 Saturn Hub Premium 🪐</h1>
+  <h2 data-aos="fade-up" data-aos-delay="200">Elevate Your Experience!</h2>
 
-    <p data-aos="fade-up" data-aos-delay="500">
-        Choose your preferred payment method and duration. We offer flexible options including Robux, CashApp, and PayPal. Select what works best for you and join the Saturn Hub community today! If you would like to see a showcase before buying click <a href="https://www.youtube.com/watch?v=y725ncDd1vM" target="_blank" style="color: var(--primary-color); text-decoration: underline;">here</a>.
-    </p>
+  <p data-aos="fade-up" data-aos-delay="500">
+    Choose your preferred payment method and duration. We offer flexible options including Robux, CashApp, and PayPal. Select what works best for you and join the Saturn Hub community today! If you would like to see a showcase before buying click <a href="https://www.youtube.com/watch?v=y725ncDd1vM" target="_blank" style="color: var(--primary-color); text-decoration: underline;">here</a>.
+  </p>
 
-    <div class="pay-methods">
-      <div class="method robux" data-aos="flip-left" data-aos-delay="600" onclick="showPaymentOptions('robux')">
-        <div class="method-content">
-          <video src="RWK.mp4" class="video-logo" autoplay loop muted playsinline></video>
-          <div class="method-title">Robux Payments</div>
-          <div class="price">
-            1 Week: 500 Robux<br>
-            1 Month: 1200 Robux<br>
-            Lifetime: 1800 Robux
-          </div>
-        </div>
-      </div>
-    
-      <div class="method cashapp" data-aos="flip-left" data-aos-delay="800" onclick="showPaymentOptions('cashapp')">
-        <div class="method-content">
-          <video src="CA.mp4" class="video-logo" autoplay loop muted playsinline></video>
-          <div class="method-title">CashApp Payments</div>
-          <div class="price">
-            1 Week: $2.50<br>
-            1 Month: $5.00<br>
-            Lifetime: $10.00
-          </div>
-        </div>
-      </div>
-    
-      <div class="method paypal" data-aos="flip-left" data-aos-delay="1000" onclick="showPaymentOptions('paypal')">
-        <div class="method-content">
-          <video src="PP.mp4" class="video-logo" autoplay loop muted playsinline></video>
-          <div class="method-title">PayPal Payments</div>
-          <div class="price">
-            1 Week: $2.50<br>
-            1 Month: $5.00<br>
-            Lifetime: $10.00
-          </div>
+  <div class="pay-methods">
+    <div class="method robux" data-aos="flip-left" data-aos-delay="600" onclick="showPaymentOptions('robux')">
+      <div class="method-content">
+        <video src="RWK.mp4" class="video-logo" autoplay loop muted playsinline></video>
+        <div class="method-title">Robux Payments</div>
+        <div class="price">
+          1 Week: 500 Robux<br>
+          1 Month: 1200 Robux<br>
+          Lifetime: 1800 Robux
         </div>
       </div>
     </div>
 
-    <div class="free-option" data-aos="fade-up" data-aos-delay="1200" onclick="showFreeOption()">
-      <div class="free-option-content">
-        <div class="free-option-title">Free Option</div>
-        <div class="free-option-description">Broke like me? Try Saturn Hub for free!</div>
+    <div class="method cashapp" data-aos="flip-left" data-aos-delay="800" onclick="showPaymentOptions('cashapp')">
+      <div class="method-content">
+        <video src="CA.mp4" class="video-logo" autoplay loop muted playsinline></video>
+        <div class="method-title">CashApp Payments</div>
+        <div class="price">
+          1 Week: $2.50<br>
+          1 Month: $5.00<br>
+          Lifetime: $10.00
+        </div>
       </div>
-      <button class="free-option-button">Get Free Key</button>
     </div>
 
-    <!-- New Discord Boost Panel -->
-    <div class="free-option" data-aos="fade-up" data-aos-delay="1300" onclick="showBoostOptions()">
-      <div class="free-option-content">
-        <div class="free-option-title">Discord Boosts</div>
-        <div class="free-option-description">We accept Discord boosts!<br>1 Boost = 1 Week Whitelist<br>2 Boosts = 1 Month Whitelist</div>
+    <div class="method paypal" data-aos="flip-left" data-aos-delay="1000" onclick="showPaymentOptions('paypal')">
+      <div class="method-content">
+        <video src="PP.mp4" class="video-logo" autoplay loop muted playsinline></video>
+        <div class="method-title">PayPal Payments</div>
+        <div class="price">
+          1 Week: $2.50<br>
+          1 Month: $5.00<br>
+          Lifetime: $10.00
+        </div>
       </div>
-      <button class="free-option-button">Boost Us!</button>
     </div>
+  </div>
 
+  <div class="free-option" data-aos="fade-up" data-aos-delay="1200" onclick="showFreeOption()">
+    <div class="free-option-content">
+      <div class="free-option-title">Free Option</div>
+      <div class="free-option-description">Broke like me? Try Saturn Hub for free!</div>
+    </div>
+    <button class="free-option-button">Get Free Key</button>
+  </div>
+
+  <!-- Discord Boost Panel -->
+  <div class="free-option discord-boost-panel" data-aos="fade-up" data-aos-delay="1300" onclick="showBoostOptions()">
+    <div class="free-option-content">
+      <div class="free-option-title" id="discord-boost-title">Discord Boosts</div>
+      <div class="free-option-description" id="discord-boost-description">
+        We accept Discord boosts!<br>1 Boost = 1 Week Whitelist<br>2 Boosts = 1 Month Whitelist
+      </div>
+      <div id="boost-disabled-text" style="display: none; color: red; font-size: 36px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: bold;">CURRENTLY DISABLED</div>
+    </div>
+    <button class="free-option-button" id="discord-boost-button">Boost Us!</button>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Boolean to track whether boosts are being accepted
+  let acceptingBoosts = false;
+
+  // Function to update the appearance of the Discord Boost Panel
+  function updateBoostPanel() {
+    const boostPanel = document.querySelector(".discord-boost-panel");
+    const boostTitle = document.getElementById("discord-boost-title");
+    const boostDescription = document.getElementById("discord-boost-description");
+    const boostButton = document.getElementById("discord-boost-button");
+    const boostDisabledText = document.getElementById("boost-disabled-text");
+
+    if (acceptingBoosts) {
+      boostPanel.style.opacity = "1";
+      boostPanel.style.pointerEvents = "auto";
+      boostTitle.style.color = "var(--primary-color)";
+      boostDescription.style.color = "white";
+      boostButton.style.backgroundColor = "var(--primary-color)";
+      boostButton.disabled = false;
+      boostDisabledText.style.display = "none"; // Hide the "CURRENTLY DISABLED" text
+    } else {
+      boostPanel.style.opacity = "0.5";
+      boostPanel.style.pointerEvents = "none";
+      boostTitle.style.color = "gray";
+      boostDescription.style.color = "gray";
+      boostButton.style.backgroundColor = "darkgray";
+      boostButton.disabled = true;
+      boostDisabledText.style.display = "block"; // Show the "CURRENTLY DISABLED" text
+    }
+  }
+
+  // Initialize the panel state on page load
+  document.addEventListener("DOMContentLoaded", updateBoostPanel);
+</script>
+
+<!-- CSS -->
+<style>
+  :root {
+    --primary-color: #4a90e2; /* Replace with your theme color */
+  }
+
+  .discord-boost-panel {
+    transition: opacity 0.3s ease, pointer-events 0.3s ease;
+    position: relative;
+  }
+
+  .free-option-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .free-option-button:disabled {
+    cursor: not-allowed;
+  }
+</style>
     <div class="links" data-aos="fade-up" data-aos-delay="1200">
       <a href="https://discord.com/invite/sathub" target="_blank">
         <i class="fab fa-discord"></i> Join our Discord for support!
       </a>
     </div>
-    
-    <div class="easter-egg" id="easterEgg">🎉 You've discovered a secret! Enjoy a 10% discount on your next purchase! Use code: SATURN10 🎉</div>
   </div>
 
   <!-- Particles.js -->
@@ -471,22 +526,6 @@
         });
       }
 
-    function showBoostOptions() {
-        Swal.fire({
-          title: 'Discord Boosts',
-          html: `
-            <p>Thank you for considering boosting us!</p>
-            <p>1 Boost = 1 Week Whitelist Access</p>
-            <p>2 Boosts = 1 Month Whitelist Access</p>
-            <p>If Purchased, Make A Ticket In Discord.</p>
-          `,
-          icon: 'info',
-          showConfirmButton: true,
-          confirmButtonText: 'Got it!',
-          showCloseButton: true,
-        });
-    }
-
     function showPaymentOptions(method) {
         let title, html;
       
@@ -517,7 +556,7 @@
           case 'paypal':
             title = 'PayPal Payment';
             html = `
-              <p>Send payment to: rangeman10@paypal.com</p>
+              <p>Send payment to: crzystntmn2003@gmail.com</p>
               <p>Please include your Discord username in the payment note.</p>
               <div class="payment-buttons">
                 <button class="payment-button" onclick="processPayPalPayment('1 week')">1 Week - $2.50</button>
@@ -591,7 +630,7 @@
     function processPayPalPayment(duration) {
       Swal.fire({
         title: 'PayPal Payment',
-        text: `Please send $${getDurationPrice('paypal', duration)} to rangeman10@paypal.com for ${duration} access. Include your Discord username in the note.`,
+        text: `Please send $${getDurationPrice('paypal', duration)} to crzystntmn2003@gmail.com for ${duration} access. Include your Discord username in the note.`,
         icon: 'info',
         confirmButtonText: 'I have sent the payment',
         showCancelButton: true,
